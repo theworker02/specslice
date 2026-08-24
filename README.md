@@ -65,23 +65,57 @@ fence js
 
 ## CLI reference
 
-Synopsis:
-
 ```text
-specslice [options] <markdown-file>
-```
+specslice 1.00 (1.0.0)
 
-| Flag / argument | Meaning |
-| --- | --- |
-| `-h, --help` | Print detailed usage and exit 0. |
-| `-v, --version` | Print 1.0.0 and exit 0. |
-| `<markdown-file>` | Path to a UTF-8 markdown file. Required. |
+Usage:
+  specslice [options] [file|-]
+  specslice headings [options] [file|-]
+  specslice fences [options] [file|-]
+  specslice toc [options] [file|-]
+  specslice langs [options] [file|-]
+
+Extract ATX headings and fenced code-block languages from markdown.
+Read a file path, or "-" / omitted path to read stdin.
+
+Subcommands:
+  headings           Print only heading lines (hN text)
+  fences             Print fence language identifiers
+  toc                Print a markdown table of contents
+  langs              Print unique fence languages (implies --unique)
+
+Options:
+  -h, --help         Show this help and exit 0
+  -V, -v, --version  Print 1.0.0 and exit 0
+  --json             Structured JSON (headings, fences, uniqueLangs)
+  --headings         Include headings (default when no subcommand)
+  --fences           Include fence identifiers (default when no subcommand)
+  --level <n>        Only headings of level 1..n (default 6)
+  --unique           Deduplicate fence languages, preserving order
+  --toc              Print a markdown TOC instead of hN/fence lines
+
+Output lines (human mode, default command):
+  hN <text>          ATX heading of level N
+  fence <ident>      Opening fence language token (empty fences omitted)
+
+Exit codes:
+  0  success
+  1  missing input, unreadable file, or invalid --level
+
+Examples:
+  specslice README.md
+  specslice toc --level 2 README.md
+  specslice langs --json README.md
+  cat SPEC.md | specslice --headings --level 3
+```
 
 Print the same text locally:
 
 ```bash
 specslice --help
+specslice -h
 specslice --version
+specslice -V
 ```
 
 Expected version output:
@@ -92,41 +126,41 @@ Expected version output:
 
 ## Configuration
 
-No configuration. ATX headings are lines matching /^(#{1,6})\s+/. Fenced blocks use three or more backticks or tildes. The identifier is the first token after the opening fence. Closing fences are ignored. Headings inside fences are ignored.
+No configuration file. Read a path, or `-` / stdin for piped markdown.
 
 ## Exit codes
 
 | Code | Meaning |
 | --- | --- |
-| `0` | File was read and outline printed (may be empty). |
-| `1` | Missing path or the file could not be read. |
+| `0` | Parsed successfully. |
+| `1` | Missing input, unreadable file, or invalid --level. |
 
 ## Examples
 
 ### Success path
 
-A README with two headings and a JS fence.
+Extract headings and fence languages from a spec.
 
 ```bash
 specslice README.md
 ```
 
 ```text
-h1 specslice
-h2 Install
-fence bash
+h1 Title
+h2 Details
+fence js
 ```
 
 ### Failure path
 
-No file argument.
+A missing file exits 1.
 
 ```bash
-specslice
+specslice nope.md
 ```
 
 ```text
-usage: specslice <markdown-file>
+file not found: nope.md
 ```
 
 Exit code is 1.

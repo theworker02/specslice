@@ -42,9 +42,47 @@
     <section id="install">
       <h2>Install</h2>
       <p>Install globally from Git, or run with Node from a clone. There are no extra dependencies.</p>
-      <pre><code>npm install -g git+https://github.com/theworker02/specslice.git
-specslice --help
-node src/cli.js --help</code></pre>
+      <pre><code>specslice 1.00 (1.0.0)
+
+Usage:
+  specslice [options] [file|-]
+  specslice headings [options] [file|-]
+  specslice fences [options] [file|-]
+  specslice toc [options] [file|-]
+  specslice langs [options] [file|-]
+
+Extract ATX headings and fenced code-block languages from markdown.
+Read a file path, or "-" / omitted path to read stdin.
+
+Subcommands:
+  headings           Print only heading lines (hN text)
+  fences             Print fence language identifiers
+  toc                Print a markdown table of contents
+  langs              Print unique fence languages (implies --unique)
+
+Options:
+  -h, --help         Show this help and exit 0
+  -V, -v, --version  Print 1.0.0 and exit 0
+  --json             Structured JSON (headings, fences, uniqueLangs)
+  --headings         Include headings (default when no subcommand)
+  --fences           Include fence identifiers (default when no subcommand)
+  --level &lt;n&gt;        Only headings of level 1..n (default 6)
+  --unique           Deduplicate fence languages, preserving order
+  --toc              Print a markdown TOC instead of hN/fence lines
+
+Output lines (human mode, default command):
+  hN &lt;text&gt;          ATX heading of level N
+  fence &lt;ident&gt;      Opening fence language token (empty fences omitted)
+
+Exit codes:
+  0  success
+  1  missing input, unreadable file, or invalid --level
+
+Examples:
+  specslice README.md
+  specslice toc --level 2 README.md
+  specslice langs --json README.md
+  cat SPEC.md | specslice --headings --level 3</code></pre>
     </section>
     <section id="usage">
       <h2>Usage</h2>
@@ -74,13 +112,13 @@ Examples:
       <div class="grid-2">
         <div>
           <h3 class="ok">Success</h3>
-          <p>A README with two headings and a JS fence.</p><pre><code>specslice README.md</code></pre><pre><code>h1 specslice
-h2 Install
-fence bash</code></pre>
+          <p>Extract headings and fence languages from a spec.</p><pre><code>specslice README.md</code></pre><pre><code>h1 Title
+h2 Details
+fence js</code></pre>
         </div>
         <div>
           <h3 class="fail">Failure</h3>
-          <p>No file argument.</p><pre><code>specslice</code></pre><pre><code>usage: specslice &lt;markdown-file&gt;</code></pre><p>Exit code is 1.</p>
+          <p>A missing file exits 1.</p><pre><code>specslice nope.md</code></pre><pre><code>file not found: nope.md</code></pre><p>Exit code is 1.</p>
         </div>
       </div>
     </section>
