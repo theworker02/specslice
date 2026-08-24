@@ -9,11 +9,11 @@
 ![license MIT](https://img.shields.io/badge/license-MIT-0B1F33)
 ![node >=18](https://img.shields.io/badge/node-%3E%3D18-C9A227?labelColor=0B1F33)
 ![release 1.00](https://img.shields.io/github/v/release/theworker02/specslice?display_name=release)
-[![npm](https://img.shields.io/npm/v/@magnexis/specslice.svg)](https://www.npmjs.com/package/@magnexis/specslice)
+[![npm](https://img.shields.io/npm/v/%40magnexis/specslice.svg)](https://www.npmjs.com/package/%40magnexis/specslice)
 
 Package version **1.00** (`1.0.0`). Default branch is **`main`** — never `master`.
 
-**Docs:** [GitHub Pages](https://theworker02.github.io/specslice/) · **Source:** [`theworker02/specslice`](https://github.com/theworker02/specslice) · **Release 1.00:** [`v1.0.0`](https://github.com/theworker02/specslice/releases/tag/v1.0.0) · **npm:** [`@magnexis/specslice`](https://www.npmjs.com/package/@magnexis/specslice)
+**Docs:** [GitHub Pages](https://theworker02.github.io/specslice/) · **Source:** [`theworker02/specslice`](https://github.com/theworker02/specslice) · **Release 1.00:** [`v1.0.0`](https://github.com/theworker02/specslice/releases/tag/v1.0.0) · **npm:** [`@magnexis/specslice`](https://www.npmjs.com/package/%40magnexis/specslice)
 
 ## Why it exists
 
@@ -30,11 +30,11 @@ Requires Node.js 18 or newer. No extra npm dependencies.
 ### Global install from npm
 
 ```bash
-npm install -g @magnexis/specslice
+npm i -g @magnexis/specslice
 specslice --help
 ```
 
-Package page: https://www.npmjs.com/package/@magnexis/specslice
+Package page: https://www.npmjs.com/package/%40magnexis/specslice
 
 ### Global install from GitHub
 
