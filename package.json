@@ -1,7 +1,7 @@
 {
   "name": "specslice",
   "version": "1.0.0",
-  "description": "Print ATX headings and fenced code identifiers from markdown.",
+  "description": "Print ATX headings and fenced code-block language identifiers from a markdown file.",
   "bin": {
     "specslice": "./src/cli.js"
   },
@@ -12,5 +12,26 @@
   "license": "MIT",
   "engines": {
     "node": ">=18"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/theworker02/specslice.git"
+  },
+  "homepage": "https://theworker02.github.io/specslice/",
+  "bugs": {
+    "url": "https://github.com/theworker02/specslice/issues"
+  },
+  "files": [
+    "src",
+    "docs",
+    "LICENSE",
+    "README.md"
+  ],
+  "keywords": [
+    "markdown",
+    "headings",
+    "fence",
+    "spec",
+    "cli"
+  ]
 }
