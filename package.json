@@ -1,6 +1,6 @@
 {
   "name": "specslice",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Print ATX headings and fenced code identifiers from markdown.",
   "bin": {
     "specslice": "./src/cli.js"
