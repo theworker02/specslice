@@ -16,7 +16,7 @@ This project is **proprietary**. Production use, redistribution, and commercial 
 ![version 1.1.0](https://img.shields.io/badge/version-1.1.0-C9A227?labelColor=0B1F33)
 ![license MIT](https://img.shields.io/badge/license-MIT-0B1F33)
 
-**Package:** [`@theworker02/specslice`](https://jsr.io/@theworker02/specslice) Â· **Site:** [GitHub Pages](https://theworker02.github.io/specslice/) Â· **Source:** [`theworker02/specslice`](https://github.com/theworker02/specslice)
+**Package:** [`@theworker02/specslice`](https://jsr.io/@theworker02/specslice) Ã‚Â· **Site:** [GitHub Pages](https://theworker02.github.io/specslice/) Ã‚Â· **Source:** [`theworker02/specslice`](https://github.com/theworker02/specslice)
 
 ## Add from JSR
 
@@ -35,12 +35,12 @@ console.log(slugifyHeading("API Reference"));
 
 ## Public API
 
-- `sliceMarkdown(text, options)` â€” extract headings and fenced languages.
-- `sliceFile(path, options)` â€” process a Markdown file.
-- `toToc(headings)` â€” generate Markdown TOC text.
-- `slugifyHeading(text)` â€” create heading anchors.
-- `PACKAGE` â€” JSR package metadata.
-- `Heading`, `Fence`, `SliceOptions`, `SliceResult` â€” documented TypeScript structures.
+- `sliceMarkdown(text, options)` Ã¢â‚¬â€ extract headings and fenced languages.
+- `sliceFile(path, options)` Ã¢â‚¬â€ process a Markdown file.
+- `toToc(headings)` Ã¢â‚¬â€ generate Markdown TOC text.
+- `slugifyHeading(text)` Ã¢â‚¬â€ create heading anchors.
+- `PACKAGE` Ã¢â‚¬â€ JSR package metadata.
+- `Heading`, `Fence`, `SliceOptions`, `SliceResult` Ã¢â‚¬â€ documented TypeScript structures.
 
 ## CLI from source
 
@@ -62,4 +62,8 @@ The canonical public package is JSR `@theworker02/specslice`, published using Gi
 
 ## License
 
-[MIT](LICENSE) Â© 2026 theworker02
+[MIT](LICENSE) Ã‚Â© 2026 theworker02
+
+## Status
+
+specslice is actively packaged for commercial licensing and acquisition diligence. See [ACQUISITION.md](./ACQUISITION.md) and [docs/acquisition/](./docs/acquisition/).
